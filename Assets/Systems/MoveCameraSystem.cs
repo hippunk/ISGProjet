@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using FYFY;
 
-public class MoveCamera : FSystem {
+public class MoveCameraSystem : FSystem {
 	// Use this to update member variables when system pause. 
 	// Advice: avoid to update your families inside this function.
 	private Family _controllableGO = FamilyManager.getFamily(new AllOfComponents(typeof(Camera),typeof(Move))); // NOTE : add shake (utlity in onProcess)
@@ -43,7 +43,7 @@ public class MoveCamera : FSystem {
 			int Oe = cam.pixelWidth;
 
 			if(Input.mousePosition.x >= Oo && Input.mousePosition.x < Io){ //Parie Ouest
-				camTransform.Translate (Vector3.left * Time.deltaTime * camMove.speed* ((System.Math.Abs(Input.mousePosition.x - Io)) / Ygap10));   //Dernier chiffre facteur de proportionalité entre 0 et 1 de la speed
+				camTransform.Translate (Vector3.left * Time.deltaTime * camMove.speed* ((System.Math.Abs(Input.mousePosition.x - Io)) / Ygap10));   //Dernier chiffre facteur de proportionalit� entre 0 et 1 de la speed
 				Debug.Log("Fact prop O");
 				Debug.Log(((System.Math.Abs(Input.mousePosition.x - Io)) / Ygap10));
 			}

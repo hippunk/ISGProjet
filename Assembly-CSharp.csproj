@@ -55,8 +55,10 @@
      <Compile Include="Assets\Scripts\MoveRandom.cs" />
      <Compile Include="Assets\Systems\CameraShakeSystem.cs" />
      <Compile Include="Assets\Systems\ControllableSystem.cs" />
+     <Compile Include="Assets\Systems\DefensesSelectionnableSystem.cs" />
+     <Compile Include="Assets\Systems\DefensesSelectionneesSystem.cs" />
      <Compile Include="Assets\Systems\EatingSystem.cs" />
-     <Compile Include="Assets\Systems\MoveCamera.cs" />
+     <Compile Include="Assets\Systems\MoveCameraSystem.cs" />
      <Compile Include="Assets\Systems\RandomMovingSystem.cs" />
      <Compile Include="Assets\Systems\VirusFactory.cs" />
      <None Include="Assets\Librairies\FYFY.xml" />
@@ -69,17 +71,17 @@
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
- <Reference Include="FYFY">
- <HintPath>C:/Users/3401924/Documents/ISGProjet/Assets/Librairies/FYFY.dll</HintPath>
- </Reference>
- <Reference Include="TriggerManager">
- <HintPath>C:/Users/3401924/Documents/ISGProjet/Assets/Librairies/TriggerManager.dll</HintPath>
- </Reference>
  <Reference Include="CollisionManager">
- <HintPath>C:/Users/3401924/Documents/ISGProjet/Assets/Librairies/CollisionManager.dll</HintPath>
+ <HintPath>C:/Users/3200234/Documents/M2/ISG/ISGProjet/Assets/Librairies/CollisionManager.dll</HintPath>
+ </Reference>
+ <Reference Include="FYFY">
+ <HintPath>C:/Users/3200234/Documents/M2/ISG/ISGProjet/Assets/Librairies/FYFY.dll</HintPath>
  </Reference>
  <Reference Include="MouseManager">
- <HintPath>C:/Users/3401924/Documents/ISGProjet/Assets/Librairies/MouseManager.dll</HintPath>
+ <HintPath>C:/Users/3200234/Documents/M2/ISG/ISGProjet/Assets/Librairies/MouseManager.dll</HintPath>
+ </Reference>
+ <Reference Include="TriggerManager">
+ <HintPath>C:/Users/3200234/Documents/M2/ISG/ISGProjet/Assets/Librairies/TriggerManager.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

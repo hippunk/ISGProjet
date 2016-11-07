@@ -1,15 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Selected : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	// Advice: FYFY component aims to contain only public members (according to Entity-Component-System paradigm).
+	public Vector3 goalPosition;
+	public bool en_route = false;
 }

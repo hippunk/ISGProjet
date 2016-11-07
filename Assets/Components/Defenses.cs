@@ -1,15 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class Defenses : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	// Advice: FYFY component aims to contain only public members (according to Entity-Component-System paradigm).
 }
