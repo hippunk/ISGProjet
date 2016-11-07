@@ -11,6 +11,12 @@ public class CameraShakeSystem : FSystem
 	// if null.
 
 	Vector3 originalPos;
+
+	protected override void onPause (int currentFrame)
+	{
+		Debug.Log ("onPause");
+	}
+
 	protected override void onResume(int currentFrame){
 		foreach (GameObject go in _controllableGO) {
 			Transform camTransform = go.GetComponent<Transform> ();
@@ -20,6 +26,7 @@ public class CameraShakeSystem : FSystem
 		}
 	}
 	protected override void onProcess(int familiesUpdateCount) {
+		Debug.Log ("onProcess");
 		foreach (GameObject go in _controllableGO) {
 			Transform camTransform = go.GetComponent<Transform> ();
 			Shake sh = go.GetComponent<Shake> ();
@@ -36,6 +43,7 @@ public class CameraShakeSystem : FSystem
 			{
 				sh.shakeDuration = 0f;
 				camTransform.localPosition = originalPos;
+				this.onPause(0);
 			}
 		}
 	}
