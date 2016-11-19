@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Components\Defenses.cs" />
      <Compile Include="Assets\Components\Heat.cs" />
+     <Compile Include="Assets\Components\HeatBar.cs" />
      <Compile Include="Assets\Components\Move.cs" />
      <Compile Include="Assets\Components\RandomTarget.cs" />
      <Compile Include="Assets\Components\Selected.cs" />
