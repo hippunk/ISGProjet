@@ -51,6 +51,7 @@
      <Compile Include="Assets\Components\Move.cs" />
      <Compile Include="Assets\Components\RandomTarget.cs" />
      <Compile Include="Assets\Components\Selected.cs" />
+     <Compile Include="Assets\Components\Selectionnable.cs" />
      <Compile Include="Assets\Components\Shake.cs" />
      <Compile Include="Assets\Components\Tetanos.cs" />
      <Compile Include="Assets\Components\WorldLimit.cs" />
