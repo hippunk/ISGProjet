@@ -26,7 +26,9 @@ public class HeatSystem : FSystem {
 				heatTransform.sizeDelta = new Vector3 (heatTransform.sizeDelta.x, 35 + 5 * nbHostile);
 				foreach (GameObject goT in _heatGO) {
 					Text heatText = goT.GetComponent<Text> ();
+					Heat heat = goT.GetComponent<Heat> ();
 					heatText.text = (37.0f + 0.1f * nbHostile) + "°C";
+					heat.heat = (37.0f + 0.1f * nbHostile);
 				}
 			}
 		}
