@@ -6,6 +6,7 @@ public class VirusFactory : FSystem {
 	private float reloadTime = 1f;
 	private float reloadProgress = 0f;
 	private bool stopGen = false;
+    private int cpt = 0;
 	// Use this to update member variables when system pause. 
 	// Advice: avoid to update your families inside this function.
 	protected override void onPause(int currentFrame) {
@@ -30,11 +31,12 @@ public class VirusFactory : FSystem {
 		//if (!stopGen) {
 			reloadProgress += Time.deltaTime;
 
-			if (reloadProgress >= reloadTime) {
+			if (reloadProgress >= reloadTime && cpt < 30) {
 				GameObject go = GameObjectManager.instantiatePrefab ("bacterie_triyeux");
 				GameObject background = GameObject.FindGameObjectWithTag ("background");
 				go.transform.position = background.transform.position; //new Vector3 ((Random.value - 0.5f) * 7,(Random.value - 0.5f) * 5.2f);
 				reloadProgress = 0;
+            cpt++;
 			}
 		//}
 	}
