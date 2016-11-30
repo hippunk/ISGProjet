@@ -29,7 +29,7 @@ public class CameraZoomSystem : FSystem {
             {
                 cam.orthographicSize--;
             }
-            if (Input.GetAxis ("Mouse ScrollWheel") < 0 && (horzExtent+1)*2 < xsize && (vertExtent+1)*2 < ysize) {
+            if (Input.GetAxis ("Mouse ScrollWheel") < 0 && ((horzExtent+1)*2 < xsize && (vertExtent+1)*2 < ysize)) {
 				Debug.Log ("dezoom");
 				cam.orthographicSize = cam.orthographicSize+1;
 			}

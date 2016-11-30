@@ -75,6 +75,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Components\Aglutine.cs" />
+    <Compile Include="Assets\Components\AnticorpBacterie.cs" />
     <Compile Include="Assets\Components\Attack.cs" />
     <Compile Include="Assets\Components\Defenses.cs" />
     <Compile Include="Assets\Components\Heat.cs" />
@@ -89,6 +91,7 @@
     <Compile Include="Assets\Components\WorldLimit.cs" />
     <Compile Include="Assets\Scripts\MoveArrows.cs" />
     <Compile Include="Assets\Scripts\MoveRandom.cs" />
+    <Compile Include="Assets\Systems\AglutineSystem.cs" />
     <Compile Include="Assets\Systems\AnimationSystem.cs" />
     <Compile Include="Assets\Systems\CameraShakeSystem.cs" />
     <Compile Include="Assets\Systems\CameraZoomSystem.cs" />
@@ -99,6 +102,7 @@
     <Compile Include="Assets\Systems\EatingSystem.cs" />
     <Compile Include="Assets\Systems\HeatSystem.cs" />
     <Compile Include="Assets\Systems\LifeSystem.cs" />
+    <Compile Include="Assets\Systems\MoveAnticorpSystem.cs" />
     <Compile Include="Assets\Systems\MoveCameraSystem.cs" />
     <Compile Include="Assets\Systems\RandomMovingSystem.cs" />
     <Compile Include="Assets\Systems\VirusFactory.cs" />
