@@ -6,10 +6,7 @@ public class LifeSystem : FSystem {
     // Use this to update member variables when system pause. 
     // Advice: avoid to update your families inside this function.
     private Family _lifeSystemGO = FamilyManager.getFamily(
-        new AllOfComponents(typeof(Attack)),
-         new AllOfComponents(typeof(Life)),
-        new AllOfComponents(typeof(Triggered2D))
-        );
+        new AllOfComponents(typeof(Attack), typeof(Life), typeof(Triggered2D)));
 
 
 
@@ -29,16 +26,18 @@ public class LifeSystem : FSystem {
             Triggered2D t2d = go.GetComponent<Triggered2D>();
             foreach (GameObject target in t2d.Targets)
             {
-
-                target.GetComponent<Life>().life -= go.GetComponent<Attack>().attack;
-                go.GetComponent<Life>().life -= target.GetComponent<Attack>().attack;
-
-
-
-                if (target.GetComponent<Life>().life <= 0)
+                if (target.GetComponent<Life>() != null)
                 {
-                    GameObjectManager.destroyGameObject(target);
+                    target.GetComponent<Life>().life -= go.GetComponent<Attack>().attack;
+                    go.GetComponent<Life>().life -= target.GetComponent<Attack>().attack;
 
+
+
+                    if (target.GetComponent<Life>().life <= 0)
+                    {
+                        GameObjectManager.destroyGameObject(target);
+
+                    }
                 }
             }
             if (go.GetComponent<Life>().life <= 0)

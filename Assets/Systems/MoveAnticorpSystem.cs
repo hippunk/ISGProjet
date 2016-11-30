@@ -40,7 +40,7 @@ public class MoveAnticorpSystem : FSystem {
             GameObject closest = go2.GetComponent<Triggered2D>().Targets[0];
             Triggered2D t2d = go2.GetComponent<Triggered2D>();
 
-            if (closest.GetComponent<Aglutine>().aglutine < 3)
+            if (closest.GetComponent<Aglutine>() != null && closest.GetComponent<Aglutine>().aglutine < 3)
             {
                 GameObjectManager.removeComponent<Move>(go2);
                 GameObjectManager.removeComponent<TriggerSensitive2D>(go2);

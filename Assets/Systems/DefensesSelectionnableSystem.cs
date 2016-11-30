@@ -40,8 +40,12 @@ public class DefensesSelectionnableSystem : FSystem {
 			foreach (GameObject go in _controllableGO) {
 				// On sélectionne l'objet
 				GameObjectManager.addComponent<Selected>(go);
-				go.GetComponent<Selected> ().can_change_goal = true;
-				/*
+                Sprite tmp = go.GetComponent<Selectionnable>().sprite;
+
+                go.GetComponent<Selectionnable>().sprite = go.GetComponent<SpriteRenderer>().sprite;
+                go.GetComponent<SpriteRenderer>().sprite = tmp;
+                //go.GetComponent<Selected> ().can_change_goal = true;
+                /*
 				// clic gauche : déselection des gameobjects sur place
 				if (go.GetComponent<Selected>() != null) {
 					GameObjectManager.removeComponent<Selected> (go);
@@ -49,7 +53,7 @@ public class DefensesSelectionnableSystem : FSystem {
 					GameObjectManager.addComponent<Selected>(go);
 				}
 				*/
-				/*Transform tr = go.GetComponent<Transform> ();
+                /*Transform tr = go.GetComponent<Transform> ();
 				Move mv = go.GetComponent<Move> ();
 
 				Vector3 movement = Vector3.zero;
@@ -69,7 +73,7 @@ public class DefensesSelectionnableSystem : FSystem {
 
 				tr.position += movement * mv.speed * Time.deltaTime;
 				*/
-			}
+            }
 		}
 		// au clique droit le joueur peut déplacer un de ses bonshommes
 			// si on a deja selectionné un gameobject, c'est le deuxieme clic (choix du placement)
