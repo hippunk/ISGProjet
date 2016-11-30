@@ -25,8 +25,11 @@ public class CameraZoomSystem : FSystem {
 			float xsize = wl.bounds.size.x;
 			float ysize = wl.bounds.size.y;
 
-
-			if (Input.GetAxis ("Mouse ScrollWheel") < 0 && (horzExtent-1)*2 < xsize && (vertExtent+1)*2 < ysize) {
+            if (horzExtent * 2 > xsize || vertExtent * 2 > ysize)
+            {
+                cam.orthographicSize--;
+            }
+            if (Input.GetAxis ("Mouse ScrollWheel") < 0 && (horzExtent+1)*2 < xsize && (vertExtent+1)*2 < ysize) {
 				Debug.Log ("dezoom");
 				cam.orthographicSize = cam.orthographicSize+1;
 			}
@@ -35,9 +38,7 @@ public class CameraZoomSystem : FSystem {
 				cam.orthographicSize = Mathf.Max(cam.orthographicSize-1,1);
 				//cam.orthographicSize = Mathf. (cam.orthographicSize-1,6);
 			}
-			if(horzExtent*2 > xsize || vertExtent*2 > ysize) {
-				cam.orthographicSize--;
-			}
+
 
 		}
 	}

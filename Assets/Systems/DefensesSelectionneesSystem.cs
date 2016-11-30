@@ -23,8 +23,8 @@ public class DefensesSelectionneesSystem : FSystem {
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
 		// clic droit : choix de l'objet defensif
-		Debug.Log ("******Defenses Selected");
-		Debug.Log ("---------> Family : " + _controllableGO.Count);
+		//Debug.Log ("******Defenses Selected");
+		//Debug.Log ("---------> Family : " + _controllableGO.Count);
 		foreach (GameObject go in _controllableGO) {
 			Move mv = go.GetComponent<Move> ();
 			Debug.Log ("Dans ma famille...");
