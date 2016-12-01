@@ -86,6 +86,9 @@
     <Compile Include="Assets\Components\Heat.cs" />
     <Compile Include="Assets\Components\HeatBar.cs" />
     <Compile Include="Assets\Components\Life.cs" />
+    <Compile Include="Assets\Components\Lympho.cs" />
+    <Compile Include="Assets\Components\LymphoBac.cs" />
+    <Compile Include="Assets\Components\LymphoVir.cs" />
     <Compile Include="Assets\Components\Move.cs" />
     <Compile Include="Assets\Components\RandomTarget.cs" />
     <Compile Include="Assets\Components\Selected.cs" />
@@ -100,6 +103,7 @@
     <Compile Include="Assets\Scripts\MoveRandom.cs" />
     <Compile Include="Assets\Systems\AfficheInfos.cs" />
     <Compile Include="Assets\Systems\AnimationSystem.cs" />
+    <Compile Include="Assets\Systems\AnticorpsFactory.cs" />
     <Compile Include="Assets\Systems\CameraShakeSystem.cs" />
     <Compile Include="Assets\Systems\CameraZoomSystem.cs" />
     <Compile Include="Assets\Systems\ChangementNiveau.cs" />
@@ -110,9 +114,9 @@
     <Compile Include="Assets\Systems\EatingSystem.cs" />
     <Compile Include="Assets\Systems\HeatSystem.cs" />
     <Compile Include="Assets\Systems\LifeSystem.cs" />
+    <Compile Include="Assets\Systems\LymphoMuteSystem.cs" />
     <Compile Include="Assets\Systems\MacrophageFactory.cs" />
     <Compile Include="Assets\Systems\MoveAnticorpSystem.cs" />
-    <Compile Include="Assets\Systems\MoveAnticorpVirusSystem.cs" />
     <Compile Include="Assets\Systems\MoveCameraSystem.cs" />
     <Compile Include="Assets\Systems\RandomMovingSystem.cs" />
     <Compile Include="Assets\Systems\VirusFactory.cs" />
