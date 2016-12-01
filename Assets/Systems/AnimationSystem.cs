@@ -9,11 +9,12 @@ public class AnimationSystem : FSystem {
 
 	protected override void onProcess(int familiesUpdateCount){
 		foreach (GameObject go in _controllableGO) {
-			Color col = go.GetComponent<Renderer> ().material.color;
+			Color col = go.GetComponent<SpriteRenderer> ().material.color;
 			//Lorsqu'un organisme meurt, déclenchement d'une animation pour qu'il disparaisse progressivement
 			if (go.GetComponent<Life> ().life <= 0 && col.a > 0) {
 				col.a -= 0.01f;
-				go.GetComponent<Renderer> ().material.color = col;
+                Debug.Log(col.a);
+				go.GetComponent<SpriteRenderer> ().material.color = col;
 			}
 
 			//Destruction du gameObject lorsqu'il n'est plus visible
