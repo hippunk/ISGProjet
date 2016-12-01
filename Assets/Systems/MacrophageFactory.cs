@@ -5,7 +5,7 @@ public class MacrophageFactory : FSystem
 {
     private Family _celluleGO = FamilyManager.getFamily(
             new AllOfComponents(typeof(Cellule)));
-    private float reloadTime = 20f;
+    private float reloadTime = 2f;
     private float reloadProgress = 0f;
     private bool stopGen = false;
     // Use this to update member variables when system pause. 

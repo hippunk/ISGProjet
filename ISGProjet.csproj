@@ -95,6 +95,7 @@
     <Compile Include="Assets\Components\Toxine.cs" />
     <Compile Include="Assets\Components\Virus.cs" />
     <Compile Include="Assets\Components\WorldLimit.cs" />
+    <Compile Include="Assets\Scripts\MenuDemarrerScript.cs" />
     <Compile Include="Assets\Scripts\MoveArrows.cs" />
     <Compile Include="Assets\Scripts\MoveRandom.cs" />
     <Compile Include="Assets\Systems\AfficheInfos.cs" />
