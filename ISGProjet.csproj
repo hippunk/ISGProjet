@@ -90,6 +90,7 @@
     <Compile Include="Assets\Components\Lympho.cs" />
     <Compile Include="Assets\Components\LymphoBac.cs" />
     <Compile Include="Assets\Components\LymphoVir.cs" />
+    <Compile Include="Assets\Components\Macrophage.cs" />
     <Compile Include="Assets\Components\Move.cs" />
     <Compile Include="Assets\Components\RandomTarget.cs" />
     <Compile Include="Assets\Components\Selected.cs" />

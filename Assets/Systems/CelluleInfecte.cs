@@ -44,7 +44,9 @@ public class CelluleInfecte : FSystem
                             go.GetComponent<SpriteRenderer>().color = Color.green;
                             GameObjectManager.removeComponent<Cellule>(go);
                         }
+ 
                         GameObjectManager.destroyGameObject(target);
+                        //target.GetComponent<Life>().life = 0;
                     }
 
 
@@ -68,9 +70,11 @@ public class CelluleInfecte : FSystem
                         {
                             GameObjectManager.addComponent<Infecte>(go);
                             go.GetComponent<SpriteRenderer>().color = Color.green;
-                            GameObjectManager.removeComponent<Bacterie>(go);
+                            //GameObjectManager.removeComponent<Bacterie>(go);
                         }
+
                         GameObjectManager.destroyGameObject(target);
+                        //target.GetComponent<Life>().life = 0;
                     }
 
 

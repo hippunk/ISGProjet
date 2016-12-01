@@ -31,21 +31,40 @@ public class LifeSystem : FSystem {
                     if (target.GetComponent<Life>() != null)
                     {
 
-                        //
-                        target.GetComponent<Life>().life -= go.GetComponent<Attack>().attack;
-                        go.GetComponent<Life>().life -= target.GetComponent<Attack>().attack;
-
-
-
-                        if (target.GetComponent<Life>().life <= 0)
+                        if (go.GetComponent<Macrophage>() && ((target.GetComponent<Virus>() && (target.GetComponent<Aglutine>().aglutine > 0)) || (target.GetComponent<Bacterie>() && target.GetComponent<Infecte>() == null) || target.GetComponent<Dechet>()))
                         {
-                            GameObjectManager.destroyGameObject(target);
+                            target.GetComponent<Life>().life -= go.GetComponent<Attack>().attack;
+                            go.GetComponent<Life>().life -= target.GetComponent<Attack>().attack;
 
+
+
+                            if (target.GetComponent<Life>().life <= 0)
+                            {
+                                if (target.GetComponent<Bacterie>())
+                                {
+                                    for (int i = 0; i < 3; i++)
+                                    {
+                                        GameObjectManager.instantiatePrefab("dechet").transform.position = target.transform.position;
+                                    }
+                                }
+                                GameObjectManager.destroyGameObject(target);
+
+                            }
                         }
                     }
                 }
                 if (go.GetComponent<Life>().life <= 0)
                 {
+                    if (go.GetComponent<Defenses>())
+                    {
+                        for (int i = 0; i < 10; i++)
+                        {
+                            GameObjectManager.instantiatePrefab("dechet").transform.position = go.transform.position;
+                        }
+                    }
+
+   
+
                     GameObjectManager.destroyGameObject(go);
                 }
             }
