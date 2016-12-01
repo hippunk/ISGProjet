@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using FYFY;
 
-public class AglutineSystem : FSystem {
+public class MoveAnticorpVirusSystem : FSystem {
 	// Use this to update member variables when system pause. 
 	// Advice: avoid to update your families inside this function.
 	protected override void onPause(int currentFrame) {
