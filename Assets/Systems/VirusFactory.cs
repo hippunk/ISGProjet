@@ -38,7 +38,7 @@ public class VirusFactory : FSystem
                 i.GetComponent<Infecte>().tempsavantmort = tmp;
                 if (i.GetComponent<Infecte>().tempsavantmort <= 0)
                 {
-                    for (int j = 0; j < 10; j++)
+                    for (int j = 0; j < 3; j++)
                     {
                         GameObject go = GameObjectManager.instantiatePrefab("virus");
                         go.transform.position =new Vector3 (i.transform.position.x - Random.value * 2 + 1, i.transform.position.y - Random.value * 2 + 1); //new Vector3 ((Random.value - 0.5f) * 7,(Random.value - 0.5f) * 5.2f);

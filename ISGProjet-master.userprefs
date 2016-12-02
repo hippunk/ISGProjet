@@ -1,0 +1,27 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Systems\ChangementNiveau10.cs">
+    <Files>
+      <File FileName="Assets\Components\PopComponent.cs" Line="7" Column="12" />
+      <File FileName="Assets\Systems\MacrophageFactory.cs" Line="15" Column="33" />
+      <File FileName="Assets\Systems\BacterieFactory.cs" Line="6" Column="30" />
+      <File FileName="Assets\Systems\VirusFactory.cs" Line="41" Column="2" />
+      <File FileName="Assets\Systems\CelluleInfecte.cs" Line="26" Column="8" />
+      <File FileName="Assets\Scripts\MenuDemarrerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Systems\ChangementNiveau.cs" Line="26" Column="33" />
+      <File FileName="Assets\Systems\ChangementNiveau2.cs" Line="23" Column="48" />
+      <File FileName="Assets\Systems\ChangementNiveau3.cs" Line="23" Column="48" />
+      <File FileName="Assets\Systems\ChangementNiveau4.cs" Line="24" Column="48" />
+      <File FileName="Assets\Systems\ChangementNiveau5.cs" Line="24" Column="48" />
+      <File FileName="Assets\Systems\ChangementNiveau6.cs" Line="23" Column="24" />
+      <File FileName="Assets\Systems\ChangementNiveau7.cs" Line="24" Column="48" />
+      <File FileName="Assets\Systems\ChangementNiveau8.cs" Line="8" Column="106" />
+      <File FileName="Assets\Systems\ChangementNiveau9.cs" Line="8" Column="61" />
+      <File FileName="Assets\Systems\ChangementNiveau10.cs" Line="9" Column="98" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

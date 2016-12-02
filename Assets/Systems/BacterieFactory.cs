@@ -3,7 +3,7 @@ using FYFY;
 
 public class BacterieFactory : FSystem {
 
-	private float reloadTime = 1f;
+	private float reloadTime = 5f;
 	private float reloadProgress = 0f;
 	//private bool stopGen = false;
     private int cpt = 0;
