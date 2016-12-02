@@ -69,7 +69,6 @@
      <Compile Include="Assets\Components\Selectionnable.cs" />
      <Compile Include="Assets\Components\Shake.cs" />
      <Compile Include="Assets\Components\T8.cs" />
-     <Compile Include="Assets\Components\Tetanos.cs" />
      <Compile Include="Assets\Components\Toxine.cs" />
      <Compile Include="Assets\Components\Virus.cs" />
      <Compile Include="Assets\Components\WorldLimit.cs" />
@@ -92,7 +91,6 @@
      <Compile Include="Assets\Systems\ChangementNiveau7.cs" />
      <Compile Include="Assets\Systems\ChangementNiveau8.cs" />
      <Compile Include="Assets\Systems\ChangementNiveau9.cs" />
-     <Compile Include="Assets\Systems\ControllableSystem.cs" />
      <Compile Include="Assets\Systems\DechetSystem.cs" />
      <Compile Include="Assets\Systems\DefensesSelectionnableSystem.cs" />
      <Compile Include="Assets\Systems\DefensesSelectionneesSystem.cs" />
