@@ -1,12 +1,23 @@
-﻿<Properties StartupItem="ISGProjet.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Systems\EatingSystem.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Systems\LifeSystem.cs">
     <Files>
       <File FileName="Assets\Components\WorldLimit.cs" Line="1" Column="1" />
       <File FileName="Assets\Components\Heat.cs" Line="1" Column="1" />
       <File FileName="Assets\Systems\HeatSystem.cs" Line="1" Column="1" />
       <File FileName="Assets\Systems\MoveCameraSystem.cs" Line="1" Column="1" />
-      <File FileName="Assets\Systems\EatingSystem.cs" Line="24" Column="1" />
+      <File FileName="Assets\Systems\EatingSystem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Systems\AfficheInfos.cs" Line="23" Column="45" />
+      <File FileName="Assets\Systems\AnticorpsFactory.cs" Line="24" Column="11" />
+      <File FileName="Assets\Systems\BacterieFactory.cs" Line="8" Column="1" />
+      <File FileName="Assets\Systems\CameraZoomSystem.cs" Line="13" Column="6" />
+      <File FileName="Assets\Systems\ControllableSystem.cs" Line="26" Column="78" />
+      <File FileName="Assets\Systems\MacrophageFactory.cs" Line="10" Column="7" />
+      <File FileName="Assets\Systems\MoveAnticorpSystem.cs" Line="88" Column="34" />
+      <File FileName="Assets\Systems\RandomMovingSystem.cs" Line="43" Column="7" />
+      <File FileName="Assets\Systems\VirusFactory.cs" Line="11" Column="7" />
+      <File FileName="Assets\Scripts\MenuDemarrerScript.cs" Line="7" Column="18" />
+      <File FileName="Assets\Systems\LifeSystem.cs" Line="57" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

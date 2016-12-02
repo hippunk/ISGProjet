@@ -66,7 +66,7 @@ public class MoveAnticorpSystem : FSystem {
         foreach (GameObject go2 in _triggeredGO)
         {
             GameObject closest = go2.GetComponent<Triggered2D>().Targets[0];
-            Triggered2D t2d = go2.GetComponent<Triggered2D>();
+            /*Triggered2D t2d =*/ go2.GetComponent<Triggered2D>();
 
             if (closest.GetComponent<Aglutine>() != null && closest.GetComponent<Aglutine>().aglutine < 3 && closest.GetComponent<Bacterie>())
             {
@@ -85,7 +85,7 @@ public class MoveAnticorpSystem : FSystem {
        foreach (GameObject go2 in _triggeredAVGO)
         {
             GameObject closest = go2.GetComponent<Triggered2D>().Targets[0];
-            Triggered2D t2d = go2.GetComponent<Triggered2D>();
+            /*Triggered2D t2d =*/ go2.GetComponent<Triggered2D>();
 
             if (closest.GetComponent<Aglutine>() != null && closest.GetComponent<Aglutine>().aglutine < 3 && closest.GetComponent<Virus>())
             {

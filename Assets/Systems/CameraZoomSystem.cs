@@ -10,9 +10,9 @@ public class CameraZoomSystem : FSystem {
 
 	protected override void onProcess(int familiesUpdateCount) {
 		foreach (GameObject go in _controllableGO) {
-			Transform camTransform = go.GetComponent<Transform> ();
+			//Transform camTransform = go.GetComponent<Transform> ();
 			Camera cam = go.GetComponent<Camera> ();
-			Move camMove = go.GetComponent<Move> ();
+			//Move camMove = go.GetComponent<Move> ();
 			Renderer wl = null;
 
 			foreach (GameObject go2 in _worldLimitGO) {
@@ -30,11 +30,11 @@ public class CameraZoomSystem : FSystem {
                 cam.orthographicSize--;
             }
             if (Input.GetAxis ("Mouse ScrollWheel") < 0 && ((horzExtent+1)*2 < xsize && (vertExtent+1)*2 < ysize)) {
-				Debug.Log ("dezoom");
+				//Debug.Log ("dezoom");
 				cam.orthographicSize = cam.orthographicSize+1;
 			}
 			if (Input.GetAxis ("Mouse ScrollWheel") > 0) {
-				Debug.Log ("zoom");
+				//Debug.Log ("zoom");
 				cam.orthographicSize = Mathf.Max(cam.orthographicSize-1,1);
 				//cam.orthographicSize = Mathf. (cam.orthographicSize-1,6);
 			}

@@ -20,8 +20,8 @@ public class AnticorpsFactory : FSystem {
 
         //if (!stopGen) {
         reloadProgress += Time.deltaTime;
-        int cptBac = 0;
-        int cptVir = 0;
+        //int cptBac = 0;
+        //int cptVir = 0;
 
         if (reloadProgress >= reloadTime)
         {

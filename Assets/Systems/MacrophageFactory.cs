@@ -7,12 +7,12 @@ public class MacrophageFactory : FSystem
             new AllOfComponents(typeof(Cellule)));
     private float reloadTime = 2f;
     private float reloadProgress = 0f;
-    private bool stopGen = false;
+    //private bool stopGen = false;
     // Use this to update member variables when system pause. 
     // Advice: avoid to update your families inside this function.
     protected override void onPause(int currentFrame)
     {
-        Debug.Log("En Pause ! ");
+//        Debug.Log("En Pause ! ");
     }
 
     // Use this to update member variables when system resume.
@@ -34,17 +34,23 @@ public class MacrophageFactory : FSystem
 
         foreach ( GameObject cell in _celluleGO) { 
         //if (!stopGen) {
-        reloadProgress += Time.deltaTime;
+	        reloadProgress += Time.deltaTime;
 
-        if (reloadProgress >= reloadTime)
-        {
-            GameObject go = GameObjectManager.instantiatePrefab("Macrophage");
-            GameObject background = GameObject.FindGameObjectWithTag("background");
-                // go.transform.position = cell.transform.position; 
-                go.transform.position = new Vector3 (cell.transform.position.x  + 1f - ( Random.value + 2f), cell.transform.position.y + 1f - (Random.value + 2f));
-            reloadProgress = 0;
-            
-        }
-        }
+			if (reloadProgress >= reloadTime)
+			{
+				GameObject go = null;
+				int rand = Random.Range (1, 4);
+				if(rand == 1)
+			    	go = GameObjectManager.instantiatePrefab("Macrophage");
+				if(rand == 2)
+					go = GameObjectManager.instantiatePrefab("Lymphocyte");
+				if(rand == 3)
+					go = GameObjectManager.instantiatePrefab("T8");
+				
+			    go.transform.position = new Vector3 (cell.transform.position.x  + 1f - ( Random.value + 2f), cell.transform.position.y + 1f - (Random.value + 2f));
+			    reloadProgress = 0;
+			    
+			}
+		}
     }
 }

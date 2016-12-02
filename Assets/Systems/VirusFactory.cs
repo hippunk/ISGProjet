@@ -6,9 +6,9 @@ public class VirusFactory : FSystem
     private Family _infecteGO = FamilyManager.getFamily(
     new AllOfComponents(typeof(Infecte)));
 
-    private float reloadTime = 1f;
-    private float reloadProgress = 0f;
-    private bool stopGen = false;
+    //private float reloadTime = 1f;
+    //private float reloadProgress = 0f;
+    //private bool stopGen = false;
 
 
     // Use this to update member variables when system pause. 
@@ -22,8 +22,7 @@ public class VirusFactory : FSystem
     // Advice: avoid to update your families inside this function.
     protected override void onResume(int currentFrame)
     {
-        GameObject go = GameObjectManager.instantiatePrefab("virus");
-        this.Pause = false;
+
     }
 
     // Use to process your families.
@@ -34,8 +33,7 @@ public class VirusFactory : FSystem
 
         foreach (GameObject i in _infecteGO)
         {
-            if (i.GetComponent<Infecte>() != null)
-            {
+
                 int tmp = i.GetComponent<Infecte>().tempsavantmort - 1;
                 i.GetComponent<Infecte>().tempsavantmort = tmp;
                 if (i.GetComponent<Infecte>().tempsavantmort <= 0)
@@ -45,11 +43,11 @@ public class VirusFactory : FSystem
                         GameObject go = GameObjectManager.instantiatePrefab("virus");
                         go.transform.position =new Vector3 (i.transform.position.x - Random.value * 2 + 1, i.transform.position.y - Random.value * 2 + 1); //new Vector3 ((Random.value - 0.5f) * 7,(Random.value - 0.5f) * 5.2f);
                     }
-                    //GameObjectManager.destroyGameObject(i);
+					GameObjectManager.removeComponent<Infecte>(i);
                     i.GetComponent<Life>().life = 0;
-                }
-
-            }
+					//GameObjectManager.destroyGameObject(i);
+				}
+				
         }
 
        

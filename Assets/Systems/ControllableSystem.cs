@@ -23,7 +23,7 @@ public class ControllableSystem : FSystem {
 	protected override void onProcess(int familiesUpdateCount) {
 		if (Input.GetMouseButtonDown (1)) {
 			foreach (GameObject go in _controllableGO) {
-				Selected goSelect = go.AddComponent(typeof(Selected)) as Selected;
+				/*Selected goSelect =*/ go.AddComponent(typeof(Selected))/* as Selected*/;
 				/*Transform tr = go.GetComponent<Transform> ();
 				Move mv = go.GetComponent<Move> ();
 

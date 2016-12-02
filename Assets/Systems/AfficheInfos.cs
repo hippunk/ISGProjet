@@ -20,7 +20,7 @@ public class AfficheInfos : FSystem {
 	// Use to process your families.
 	protected override void onProcess(int familiesUpdateCount) {
 		foreach (GameObject go in _entitesGO) {
-			Debug.Log ("Afficher sa vie, nom, ...");
+			Debug.Log ("Afficher sa vie, nom, ..."+go);
 		}
 	}
 }

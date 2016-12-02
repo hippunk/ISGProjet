@@ -22,10 +22,10 @@ public class MoveCameraSystem : FSystem {
 			float vertExtent = cam.orthographicSize;    
 			float horzExtent = vertExtent * Screen.width / Screen.height;
 
-			float Olim = wl.transform.position.x - wl.bounds.size.x / 2  + 0.1f;
-			float Elim = wl.transform.position.x + wl.bounds.size.x / 2 - 0.1f;
-			float Slim = wl.transform.position.y - wl.bounds.size.y / 2 + 0.1f;
-			float Nlim = wl.transform.position.y + wl.bounds.size.y / 2 - 0.1f;
+			float Olim = wl.transform.position.x - wl.bounds.size.x / 2  + 0.01f;
+			float Elim = wl.transform.position.x + wl.bounds.size.x / 2 - 0.01f;
+			float Slim = wl.transform.position.y - wl.bounds.size.y / 2 + 0.01f;
+			float Nlim = wl.transform.position.y + wl.bounds.size.y / 2 - 0.01f;
 
 			float COlim = cam.transform.position.x - horzExtent ;
 			float CElim = cam.transform.position.x + horzExtent ;

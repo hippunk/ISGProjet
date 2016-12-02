@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MenuDemarrerScript : MonoBehaviour {
     
-    public void LoadScene( string name)
+    public void loadScene( string name)
     {
-        Application.LoadLevel(name);
+        SceneManager.LoadScene(name);
 
 
     }

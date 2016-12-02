@@ -40,7 +40,7 @@ public class RandomMovingSystem : FSystem {
 				&& ! (rt.target.Equals(tr.position)) ) {
 				tr.position = Vector3.MoveTowards (tr.position, rt.target, mv.speed * Time.deltaTime);
 			} else {
-				Vector2 backPosition = GameObject.FindGameObjectWithTag ("background").transform.position;
+				//Vector2 backPosition = GameObject.FindGameObjectWithTag ("background").transform.position;
 				rt.target = new Vector2 ((Random.Range(bd.min.x, bd.max.x)), (Random.Range(bd.min.y,bd.max.y))); //(Random.Range(backPosition[0] - 0.5f, backPosition[0] + 0.5f)) * 7, (Random.Range(backPosition[1] - 0.5f, backPosition[1] + 0.5f)) * 7);
 			} 
 			/*

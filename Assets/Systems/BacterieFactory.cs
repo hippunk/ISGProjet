@@ -5,7 +5,7 @@ public class BacterieFactory : FSystem {
 
 	private float reloadTime = 1f;
 	private float reloadProgress = 0f;
-	private bool stopGen = false;
+	//private bool stopGen = false;
     private int cpt = 0;
 	// Use this to update member variables when system pause. 
 	// Advice: avoid to update your families inside this function.
@@ -16,7 +16,7 @@ public class BacterieFactory : FSystem {
 	// Use this to update member variables when system resume.
 	// Advice: avoid to update your families inside this function.
 	protected override void onResume(int currentFrame){
-		GameObject go = GameObjectManager.instantiatePrefab ("bacterie_triyeux");
+		/*GameObject go = */GameObjectManager.instantiatePrefab ("bacterie_triyeux");
 		this.Pause = false;
 		reloadProgress = 0;
 	}
