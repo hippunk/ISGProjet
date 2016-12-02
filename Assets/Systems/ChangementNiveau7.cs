@@ -6,6 +6,7 @@ public class ChangementNiveau7 : FSystem {
 	// Advice: avoid to update your families inside this function.
 	private Family _defenseGO = FamilyManager.getFamily(new AllOfComponents(typeof(Defenses)), new NoneOfComponents(typeof(Infecte))); // NOTE : changer components pour traiter tous les enemis
 	private Family _hostileGO = FamilyManager.getFamily(new AllOfComponents(typeof(Virus))); // NOTE : changer components pour traiter tous les enemis
+	private Family _macroGO = FamilyManager.getFamily(new AllOfComponents(typeof(Macrophage))); // NOTE : changer components pour traiter tous les enemis
 	private Family _heatGO = FamilyManager.getFamily(new AllOfComponents(typeof(Heat))); // famille pour changer la temperature
 
 	protected override void onPause(int currentFrame) {
@@ -34,6 +35,10 @@ public class ChangementNiveau7 : FSystem {
 
 		if (_defenseGO.Count == 0)
 			GameObjectManager.loadScene("GameOver");
+		if (_macroGO.Count == 0 && nbHostile > 0)
+			GameObjectManager.loadScene("GameOver");
+		
+
 
 	}
 

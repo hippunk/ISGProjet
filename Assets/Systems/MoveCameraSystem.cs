@@ -9,6 +9,8 @@ public class MoveCameraSystem : FSystem {
 		// Update is called once per frame
 
 	protected override void onProcess(int familiesUpdateCount) {
+		if (Input.GetKey(KeyCode.Escape)) 
+			GameObjectManager.loadScene("MenuDemarrer");
 		foreach (GameObject go in _controllableGO) {
 			Transform camTransform = go.GetComponent<Transform> ();
 			Camera cam =  go.GetComponent<Camera> ();
