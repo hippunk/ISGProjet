@@ -22,13 +22,13 @@ public class HeatSystem : FSystem {
 		int nbHostile = _hostileGO.Count;
 		foreach (GameObject go in _heatBarGO){
 			RectTransform heatTransform = go.GetComponent<RectTransform> ();
-			if (heatTransform.sizeDelta.y < 300) {
-				heatTransform.sizeDelta = new Vector3 (heatTransform.sizeDelta.x, Mathf.Min(35f + 5.3f * nbHostile,300f));
+			if (heatTransform.sizeDelta.y <= 285) {
+				heatTransform.sizeDelta = new Vector3 (heatTransform.sizeDelta.x, Mathf.Min(35f + 5f * nbHostile,285f));
 				foreach (GameObject goT in _heatGO) {
 					Text heatText = goT.GetComponent<Text> ();
 					Heat heat = goT.GetComponent<Heat> ();
-					heatText.text = (37.0f + 0.1f * nbHostile) + "°C";
-					heat.heat = (37.0f + 0.1f * nbHostile);
+					heatText.text = Mathf.Min(37.0f + 0.1f * nbHostile, 42.0f) + "°C";
+					heat.heat = Mathf.Min(37.0f + 0.1f * nbHostile,42.0f);
 				}
 			}
 		}
