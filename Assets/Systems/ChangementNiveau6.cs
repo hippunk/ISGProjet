@@ -20,15 +20,17 @@ public class ChangementNiveau6 : FSystem {
 		int nbHostile = _hostileGO.Count;
 
 		if (nbHostile == 0) {
-			GameObjectManager.loadScene("SelectionNiveau");
-		}
+			//GameObjectManager.loadScene("SelectionNiveau");
+            GameObject.Find("GuiManager").GetComponent<GuiManager>().victoire();
+        }
 
 		foreach (GameObject go in _heatGO)
 		{
 			if (go.GetComponent<Heat>().heat >= 42 )
 			{
-				GameObjectManager.loadScene("GameOver");
-			}
+                GameObject.Find("GuiManager").GetComponent<GuiManager>().defaite();
+                //GameObjectManager.loadScene("GameOver");
+            }
 		}
 
 	}

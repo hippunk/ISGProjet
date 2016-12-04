@@ -4,7 +4,8 @@ using FYFY;
 public class VirusFactory : FSystem
 {
     private Family _infecteGO = FamilyManager.getFamily(
-    new AllOfComponents(typeof(Infecte)));
+    new AllOfComponents(typeof(Infecte)),
+    new NoneOfComponents(typeof(Cellule)));
 
     //private float reloadTime = 1f;
     //private float reloadProgress = 0f;
