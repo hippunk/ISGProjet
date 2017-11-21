@@ -16,7 +16,12 @@ public class BacterieFactory : FSystem {
 	// Use this to update member variables when system resume.
 	// Advice: avoid to update your families inside this function.
 	protected override void onResume(int currentFrame){
-		/*GameObject go = */GameObjectManager.instantiatePrefab ("bacterie_triyeux");
+		/*GameObject go = *///GameObjectManager.instantiatePrefab ("bacterie_triyeux");
+
+		GameObject go = GameObject.Instantiate ((GameObject)Resources.Load ("bacterie_triyeux"));
+  
+		GameObjectManager.bind (go);
+
 		this.Pause = false;
 		reloadProgress = 0;
 	}
@@ -32,7 +37,11 @@ public class BacterieFactory : FSystem {
 			reloadProgress += Time.deltaTime;
 
 			if (reloadProgress >= reloadTime && cpt < 30) {
-				GameObject go = GameObjectManager.instantiatePrefab ("bacterie_triyeux");
+				//GameObject go = GameObjectManager.instantiatePrefab ("bacterie_triyeux");
+				GameObject go = GameObject.Instantiate ((GameObject)Resources.Load ("bacterie_triyeux"));
+
+				GameObjectManager.bind (go);
+
 				GameObject background = GameObject.FindGameObjectWithTag ("background");
 				go.transform.position = background.transform.position; //new Vector3 ((Random.value - 0.5f) * 7,(Random.value - 0.5f) * 5.2f);
 				reloadProgress = 0;

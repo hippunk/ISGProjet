@@ -40,7 +40,7 @@ public class LifeSystem : FSystem {
 							go.GetComponent<Life> ().life -= target.GetComponent<Attack> ().attack;
 
 						}
-						if (go.GetComponent<T8> () && (target.GetComponent<Infecte>() && (target.GetComponent<Bacterie>() || target.GetComponent<Cellule>()))) {
+						if (go.GetComponent<T8> () && (target.GetComponent<Infecte>() && (target.GetComponent<Infecte>() || target.GetComponent<Cellule>()))) {
 							//Debug.Log (target);
 							//Debug.Log (go);
 							target.GetComponent<Life> ().life -= go.GetComponent<Attack> ().attack;
@@ -67,10 +67,15 @@ public class LifeSystem : FSystem {
 				{                                    
 					for (int i = 0; i < 10; i++)
 					{
-						GameObjectManager.instantiatePrefab("dechet").transform.position = go.transform.position;
+						//GameObjectManager.instantiatePrefab("dechet").transform.position = go.transform.position;
+						GameObject obj = GameObject.Instantiate ((GameObject)Resources.Load ("dechet"));
+						obj.transform.position = go.transform.position;    
+						GameObjectManager.bind (obj);
 					}
 
-					GameObjectManager.destroyGameObject(go);
+					//GameObjectManager.destroyGameObject(go);
+					GameObjectManager.unbind (go);
+					GameObject.Destroy (go);
 				}
 			}
 
@@ -79,9 +84,15 @@ public class LifeSystem : FSystem {
 				{
 					for (int i = 0; i < 3; i++)
 					{
-						GameObjectManager.instantiatePrefab("dechet").transform.position = go.transform.position;
+						//GameObjectManager.instantiatePrefab("dechet").transform.position = go.transform.position;
+						GameObject obj = GameObject.Instantiate ((GameObject)Resources.Load ("dechet"));
+						obj.transform.position = go.transform.position;    
+						GameObjectManager.bind (obj);
+
 					}
-					GameObjectManager.destroyGameObject(go);
+					//GameObjectManager.destroyGameObject(go);
+					GameObjectManager.unbind (go);
+					GameObject.Destroy (go);
 				}
 			}
 			if (go.GetComponent<Virus> ()){
@@ -91,21 +102,27 @@ public class LifeSystem : FSystem {
 					{
 						GameObjectManager.instantiatePrefab("dechet").transform.position = go.transform.position;
 					}*/
-					GameObjectManager.destroyGameObject(go);
+					//GameObjectManager.destroyGameObject(go);
+					GameObjectManager.unbind (go);
+					GameObject.Destroy (go);
 				}
 			}
 			if (go.GetComponent<Dechet> ()){
 				if (go.GetComponent<Life>().life <= 0)
 				{
 
-					GameObjectManager.destroyGameObject(go);
+					//GameObjectManager.destroyGameObject(go);
+					GameObjectManager.unbind (go);
+					GameObject.Destroy (go);
 				}
 			}
 			if (go.GetComponent<Toxine> ()){
 				if (go.GetComponent<Life>().life <= 0)
 				{
 
-					GameObjectManager.destroyGameObject(go);
+					//GameObjectManager.destroyGameObject(go);
+					GameObjectManager.unbind (go);
+					GameObject.Destroy (go);
 				}
 			}
 

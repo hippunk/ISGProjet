@@ -65,18 +65,27 @@ public class MoveAnticorpSystem : FSystem {
 
         foreach (GameObject go2 in _triggeredGO)
         {
-            GameObject closest = go2.GetComponent<Triggered2D>().Targets[0];
+			//Debug.Log ("bacTrig : "+go2.GetComponent<Triggered2D>()+" "+go2.GetComponent<Triggered2D>().Targets[0]);
+			GameObject closest = go2.GetComponent<Triggered2D>().Targets[0];
             /*Triggered2D t2d =*/ go2.GetComponent<Triggered2D>();
 
             if (closest.GetComponent<Aglutine>() != null && closest.GetComponent<Aglutine>().aglutine < 3 && closest.GetComponent<Bacterie>())
             {
-                GameObjectManager.removeComponent<Move>(go2);
-                GameObjectManager.removeComponent<TriggerSensitive2D>(go2);
-                GameObjectManager.removeComponent<CircleCollider2D>(go2);
+				//Fix fyfy v2
+                //GameObjectManager.removeComponent<Move>(go2);
+                //GameObjectManager.removeComponent<TriggerSensitive2D>(go2);
+                //GameObjectManager.removeComponent<CircleCollider2D>(go2);
+
+				GameObject.Destroy (go2.GetComponent<Move>());
+				GameObject.Destroy (go2.GetComponent<TriggerSensitive2D>());
+				GameObject.Destroy (go2.GetComponent<CircleCollider2D>());
+				GameObjectManager.unbind (go2);
                 //GameObjectManager.removeComponent<AnticorpBacterie>(go2);
                 closest.GetComponent<Aglutine>().aglutine += 1;
                 closest.GetComponent<Move>().speed *= 0.5f;
-                GameObjectManager.setGameObjectParent(go2, closest, true);
+                //GameObjectManager.setGameObjectParent(go2, closest, true);
+				go2.transform.parent = closest.transform;
+
             }
 
 
@@ -89,14 +98,20 @@ public class MoveAnticorpSystem : FSystem {
 
             if (closest.GetComponent<Aglutine>() != null && closest.GetComponent<Aglutine>().aglutine < 3 && closest.GetComponent<Virus>())
             {
-                GameObjectManager.removeComponent<Move>(go2);
-                GameObjectManager.removeComponent<TriggerSensitive2D>(go2);
-                GameObjectManager.removeComponent<CircleCollider2D>(go2);
+                //GameObjectManager.removeComponent<Move>(go2);
+                //GameObjectManager.removeComponent<TriggerSensitive2D>(go2);
+                //GameObjectManager.removeComponent<CircleCollider2D>(go2);
+
+				GameObject.Destroy (go2.GetComponent<Move>());
+				GameObject.Destroy (go2.GetComponent<TriggerSensitive2D>());
+				GameObject.Destroy (go2.GetComponent<CircleCollider2D>());
+				GameObjectManager.unbind (go2);
                 //GameObjectManager.removeComponent<AnticorpVirus>(go2);
                 closest.GetComponent<Aglutine>().aglutine += 1;
                 closest.GetComponent<Move>().speed *= 0.5f;
-                GameObjectManager.setGameObjectParent(go2, closest, true);
-            }
+                //GameObjectManager.setGameObjectParent(go2, closest, true);
+				go2.transform.parent = closest.transform;
+			}
 
 
         }

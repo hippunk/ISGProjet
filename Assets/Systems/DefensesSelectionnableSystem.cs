@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using FYFY;
-using FYFY_plugins.MouseManager;
+using FYFY_plugins.PointerManager;
 
 public class DefensesSelectionnableSystem : FSystem {
 	// on récupere les elt defensifs qui sont selectionnables mais pas encore sélectionnées
@@ -18,14 +18,14 @@ public class DefensesSelectionnableSystem : FSystem {
 		if (Input.GetKey (KeyCode.LeftControl) && Input.GetMouseButtonDown (0)) { 
 			foreach (GameObject go in _controllableGO) {
 				// On sélectionne l'objet
-				if (go.GetComponent<MouseOver> () != null && go.GetComponent<Selected>() == null) {
+				if (go.GetComponent<PointerOver> () != null && go.GetComponent<Selected>() == null) {
 					Debug.Log ("CTRL selection");
 					GameObjectManager.addComponent<Selected>(go);
 					Sprite tmp = go.GetComponent<Selectionnable>().sprite;
 					go.GetComponent<Selectionnable>().sprite = go.GetComponent<SpriteRenderer>().sprite;
 					go.GetComponent<SpriteRenderer>().sprite = tmp;
 				}
-				else if(go.GetComponent<MouseOver> () != null && go.GetComponent<Selected>() != null){
+				else if(go.GetComponent<PointerOver> () != null && go.GetComponent<Selected>() != null){
 					Debug.Log ("CTRL deselection");
 					GameObjectManager.removeComponent<Selected>(go);
 					Sprite tmp = go.GetComponent<Selectionnable>().sprite;
@@ -39,7 +39,7 @@ public class DefensesSelectionnableSystem : FSystem {
 			// on sélectionne tous les games objects focused (il n'y en a tjr qu'un à la fois)
 			foreach (GameObject go in _controllableGO) {
 				// On sélectionne l'objet
-				if (go.GetComponent<MouseOver> () != null) {
+				if (go.GetComponent<PointerOver> () != null) {
 					Debug.Log ("selection");
 					if (go.GetComponent<Selected> () == null) {
 						GameObjectManager.addComponent<Selected> (go);

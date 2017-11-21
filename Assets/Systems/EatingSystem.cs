@@ -21,7 +21,9 @@ public class EatingSystem : FSystem {
 		foreach (GameObject go in _triggeredGO) {
 			Triggered2D t2d = go.GetComponent<Triggered2D> ();
 			foreach (GameObject target in t2d.Targets) {
-				GameObjectManager.destroyGameObject (target);
+				//GameObjectManager.destroyGameObject (target);
+				GameObjectManager.unbind (target);
+				GameObject.Destroy (target);
 			}
 		}
 	}

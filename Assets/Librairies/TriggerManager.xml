@@ -34,7 +34,8 @@
         </member>
         <member name="T:FYFY_plugins.TriggerManager.TriggerSensitive2D">
             <summary>
-            	Component allowing GameObject to be noticed when it is in contact with another GameObject.
+            	TriggerSensitive2D allows GameObject to be noticed when it is in contact with another GameObject.
+                In this case the Triggered2d component (dynamically added) provides the list of GameObject in contact with him.
             </summary>
         </member>
         <member name="T:FYFY_plugins.TriggerManager.TriggerSensitive2DTarget">
@@ -45,7 +46,8 @@
         </member>
         <member name="T:FYFY_plugins.TriggerManager.TriggerSensitive3D">
             <summary>
-            	Component allowing GameObject to be noticed when it is in contact with another GameObject.
+            	TriggerSensitive3D allows GameObject to be noticed when it is in contact with another GameObject.
+                In this case the Triggered3d component (dynamically added) provides the list of GameObject in contact with him.
             </summary>
         </member>
         <member name="T:FYFY_plugins.TriggerManager.TriggerSensitive3DTarget">

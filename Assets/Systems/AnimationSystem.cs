@@ -19,7 +19,9 @@ public class AnimationSystem : FSystem {
 
 			//Destruction du gameObject lorsqu'il n'est plus visible
 			if (col.a <= 0)
-				GameObjectManager.destroyGameObject (go);
+				GameObjectManager.unbind (go);
+				GameObject.Destroy (go);
+				//GameObjectManager.destroyGameObject (go);
 		}
 	}
 }

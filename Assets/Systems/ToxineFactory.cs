@@ -9,15 +9,20 @@ public class ToxineFactory : FSystem {
 	protected override void onProcess(int familiesUpdateCount) {
 		reloadProgress += Time.deltaTime;
 
-
+		Debug.Log ("Tox factory : "+reloadProgress);
 		if (reloadProgress >= reloadTime)
 		{
 			foreach (GameObject go in _bacGO) {
+				Debug.Log ("Pop toxines : "+_bacGO);
+				//GameObjectManager.instantiatePrefab ("toxine").transform.position = go.transform.position;
+				GameObject obj = GameObject.Instantiate ((GameObject)Resources.Load ("toxine"));
+				obj.transform.position = go.transform.position;    
+				GameObjectManager.bind (obj);
 
-				GameObjectManager.instantiatePrefab ("toxine").transform.position = go.transform.position;
 
-				reloadProgress = 0;
 			}
+			reloadProgress = 0;
 		}
+
 	}
 }

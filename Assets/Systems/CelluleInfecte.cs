@@ -23,6 +23,8 @@ public class CelluleInfecte : FSystem
 						go.GetComponent<Infection> ().infection += 1;
 						if (go.GetComponent<Infection> ().infection >= 1 && !go.GetComponent<Infecte> ()) {
 							GameObjectManager.addComponent<Infecte> (go);
+							//go.AddComponent<Infecte>();
+							//GameObjectManager.bind (go);
 							go.GetComponent<SpriteRenderer> ().color = Color.green;
 							//GameObjectManager.removeComponent<Cellule>(go);
 						}

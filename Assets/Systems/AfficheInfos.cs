@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using FYFY;
-using FYFY_plugins.MouseManager;
+using FYFY_plugins.PointerManager;
 
 public class AfficheInfos : FSystem {
 
 	private Family _entitesGO = FamilyManager.getFamily(
-		new AllOfComponents(typeof(MouseOver))); // NOTE : changer components pour traiter tous les enemis
+		new AllOfComponents(typeof(PointerOver))); // NOTE : changer components pour traiter tous les enemis
 
 	// Use this to update member variables when system pause. 
 	// Advice: avoid to update your families inside this function.

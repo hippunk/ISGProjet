@@ -26,14 +26,21 @@ public class AnticorpsFactory : FSystem {
         if (reloadProgress >= reloadTime)
         {
             foreach (GameObject go in _lymphoBacGO) {
-                if (_antiBacterie.Count < _hostileBacterie.Count * 3)
-                   
-                    GameObjectManager.instantiatePrefab("anticorp-bacterie").transform.position = go.transform.position;
+				if (_antiBacterie.Count < _hostileBacterie.Count * 3) {
+					
+					GameObject obj = GameObject.Instantiate ((GameObject)Resources.Load ("anticorp-bacterie"));
+					obj.transform.position = go.transform.position;    
+					GameObjectManager.bind (obj);
+				}
             }
             foreach (GameObject go in _lymphoVirGO)
             {
-                if (_antiVirus.Count < _hostileVirus.Count * 3)
-                    GameObjectManager.instantiatePrefab("anticorp-virus").transform.position = go.transform.position;
+				if (_antiVirus.Count < _hostileVirus.Count * 3) {
+				
+					GameObject obj = GameObject.Instantiate ((GameObject)Resources.Load ("anticorp-virus"));
+					obj.transform.position = go.transform.position;    
+					GameObjectManager.bind (obj);
+				}
             }
             reloadProgress = 0;
         }

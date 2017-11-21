@@ -34,15 +34,20 @@ public class VirusFactory : FSystem
 
         foreach (GameObject i in _infecteGO)
         {
-
+			Debug.Log ("nb infect : "+_infecteGO.Count);
                 int tmp = i.GetComponent<Infecte>().tempsavantmort - 1;
                 i.GetComponent<Infecte>().tempsavantmort = tmp;
                 if (i.GetComponent<Infecte>().tempsavantmort <= 0)
                 {
                     for (int j = 0; j < 3; j++)
                     {
-                        GameObject go = GameObjectManager.instantiatePrefab("virus");
-                        go.transform.position =new Vector3 (i.transform.position.x - Random.value * 2 + 1, i.transform.position.y - Random.value * 2 + 1); //new Vector3 ((Random.value - 0.5f) * 7,(Random.value - 0.5f) * 5.2f);
+                        //GameObject go = GameObjectManager.instantiatePrefab("virus");
+						GameObject obj = GameObject.Instantiate ((GameObject)Resources.Load ("virus"));
+						obj.transform.position =new Vector3 (i.transform.position.x - Random.value * 2 + 1, i.transform.position.y - Random.value * 2 + 1);;    
+						GameObjectManager.bind (obj);
+						    
+
+						//go.transform.position  //new Vector3 ((Random.value - 0.5f) * 7,(Random.value - 0.5f) * 5.2f);
                     }
 					GameObjectManager.removeComponent<Infecte>(i);
                     i.GetComponent<Life>().life = 0;

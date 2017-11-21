@@ -30,7 +30,10 @@ public class MacrophageFactory : FSystem
 				GameObject go = null;
 
 				if ( cell.GetComponent<PopComponent> ().popMacro && _macroGO.Count <= 10) {
-					go = GameObjectManager.instantiatePrefab ("Macrophage");
+					//go = GameObjectManager.instantiatePrefab ("Macrophage");
+					go = GameObject.Instantiate ((GameObject)Resources.Load ("Macrophage"));
+					GameObjectManager.bind (go);
+
 					go.transform.position = new Vector3 (cell.transform.position.x + 1f - (Random.value + 2f), cell.transform.position.y + 1f - (Random.value + 2f));
 					if (cell.GetComponent<Infecte> ()) {
 						go.GetComponent<SpriteRenderer> ().color = Color.green;
@@ -38,7 +41,10 @@ public class MacrophageFactory : FSystem
 					}
 				}
 				if (cell.GetComponent<PopComponent> ().popB && _lymphoGO.Count <= 5) {
-					go = GameObjectManager.instantiatePrefab ("Lymphocyte");
+					//go = GameObjectManager.instantiatePrefab ("Lymphocyte");
+					go = GameObject.Instantiate ((GameObject)Resources.Load ("Lymphocyte"));
+					GameObjectManager.bind (go);
+
 					go.transform.position = new Vector3 (cell.transform.position.x + 1f - (Random.value + 2f), cell.transform.position.y + 1f - (Random.value + 2f));
 					if (cell.GetComponent<Infecte> ()) {
 						go.GetComponent<SpriteRenderer> ().color = Color.green;
@@ -46,7 +52,10 @@ public class MacrophageFactory : FSystem
 					}
 				}
 				if ( cell.GetComponent<PopComponent> ().popT8 && _T8GO.Count <= 3) {
-					go = GameObjectManager.instantiatePrefab ("T8");
+					//go = GameObjectManager.instantiatePrefab ("T8");
+					go = GameObject.Instantiate ((GameObject)Resources.Load ("T8"));
+					GameObjectManager.bind (go);
+
 					go.transform.position = new Vector3 (cell.transform.position.x + 1f - (Random.value + 2f), cell.transform.position.y + 1f - (Random.value + 2f));
 					if (cell.GetComponent<Infecte> ()) {
 						go.GetComponent<SpriteRenderer> ().color = Color.green;

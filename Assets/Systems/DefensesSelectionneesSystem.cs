@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using FYFY;
-using FYFY_plugins.MouseManager;
+using FYFY_plugins.PointerManager;
 
 // Pour toutes les défenses qui ont été sélectionnées
 public class DefensesSelectionneesSystem : FSystem {

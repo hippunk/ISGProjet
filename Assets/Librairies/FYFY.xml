@@ -58,6 +58,11 @@
             	Initializes a new instance of the <see cref="T:FYFY.DestroyedComponentException"/> class.
             </summary>
         </member>
+        <member name="M:FYFY.DestroyedComponentException.#ctor(System.String,System.String)">
+            <summary>
+            	Initializes a new instance of the <see cref="T:FYFY.DestroyedComponentException"/> class.
+            </summary>
+        </member>
         <member name="T:FYFY.DestroyedGameObjectException">
             <summary>
             	Exception used when you try to access to a <c>GameObject</c> that has been destroyed.
@@ -68,12 +73,37 @@
             	Initializes a new instance of the <see cref="T:FYFY.DestroyedGameObjectException"/> class.
             </summary>
         </member>
+        <member name="M:FYFY.DestroyedGameObjectException.#ctor(System.String,System.String)">
+            <summary>
+            	Initializes a new instance of the <see cref="T:FYFY.FyfyException"/> class.
+            </summary>
+        </member>
+        <member name="T:FYFY.FyfyException">
+            <summary>
+            	Default exception used when a problem occurs with <c>Fyfy</c>.
+            </summary>
+        </member>
+        <member name="M:FYFY.FyfyException.#ctor(System.String)">
+            <summary>
+            	Initializes a new instance of the <see cref="T:FYFY.FyfyException"/> class.
+            </summary>
+        </member>
+        <member name="M:FYFY.FyfyException.#ctor(System.String,System.String)">
+            <summary>
+            	Initializes a new instance of the <see cref="T:FYFY.FyfyException"/> class.
+            </summary>
+        </member>
         <member name="T:FYFY.UnknownComponentException">
             <summary>
             	Exception used when you try to access to a <c>Component</c> that is unknown to <c>FYFY</c>.
             </summary>
         </member>
         <member name="M:FYFY.UnknownComponentException.#ctor(System.String)">
+            <summary>
+            	Initializes a new instance of the <see cref="T:FYFY.UnknownComponentException"/> class.
+            </summary>
+        </member>
+        <member name="M:FYFY.UnknownComponentException.#ctor(System.String,System.String)">
             <summary>
             	Initializes a new instance of the <see cref="T:FYFY.UnknownComponentException"/> class.
             </summary>
@@ -88,6 +118,11 @@
             	Initializes a new instance of the <see cref="T:FYFY.UnknownGameObjectException"/> class.
             </summary>
         </member>
+        <member name="M:FYFY.UnknownGameObjectException.#ctor(System.String,System.String)">
+            <summary>
+            	Initializes a new instance of the <see cref="T:FYFY.FyfyException"/> class.
+            </summary>
+        </member>
         <member name="T:FYFY.Family">
             <summary>
             	<c>Family</c> is a container of <c>GameObjects</c> which respect contraints specified by <see cref="T:FYFY.Matcher"/>.
@@ -100,6 +135,11 @@
             		<see cref="T:FYFY.GameObjectManager">functions</see>).
             	</para>
             </remarks>
+        </member>
+        <member name="F:FYFY.Family.showContent">
+            <summary>
+            	Show game objects included into this family
+            </summary>
         </member>
         <member name="M:FYFY.Family.GetEnumerator">
             <summary>
@@ -132,6 +172,19 @@
             <param name="callback">
             	Callback function.
             </param>
+        </member>
+        <member name="M:FYFY.Family.Equals(FYFY.Family)">
+            <summary>
+            	Check if two families are equals.
+            </summary>
+        </member>
+        <member name="M:FYFY.Family.First">
+            <summary>
+            	Get the first Game Object included into the family
+            </summary>
+            <returns>
+            	The first GameObject or null if the family is empty.
+            </returns>
         </member>
         <member name="P:FYFY.Family.Count">
             <summary>
@@ -191,6 +244,21 @@
             <remarks>
             	FYFY systems have to be setted in the <c>Unity Editor</c> in a MainLoop's block of update.
             </remarks>
+        </member>
+        <member name="F:FYFY.FSystem.avgExecDuration">
+            <summary>
+            	Gets the average execution time taken by onProcess
+            </summary>
+        </member>
+        <member name="F:FYFY.FSystem.maxExecDuration">
+            <summary>
+            	Gets the maximum execution time taken by onProcess
+            </summary>
+        </member>
+        <member name="F:FYFY.FSystem.showFamilies">
+            <summary>
+            	Show families used in this system
+            </summary>
         </member>
         <member name="M:FYFY.FSystem.onPause(System.Int32)">
             <summary>
@@ -283,48 +351,17 @@
             	Name of the scene to load.
             </param>
         </member>
-        <member name="M:FYFY.GameObjectManager.createGameObject">
+        <member name="M:FYFY.GameObjectManager.bind(UnityEngine.GameObject)">
             <summary>
-            	Creates a game object and returns it. The game object will be registered by FYFY at the beginning of the next update block.
+            	Bind a game object with FYFY. The game object will be registered by FYFY at the beginning of the next update block.
             </summary>
             <remarks>
-            	Even if the game object is not registered, you can use it in other <see cref="T:FYFY.GameObjectManager">functions</see> in current frame.
+            	In the same frame of binding, you can use it in other <see cref="T:FYFY.GameObjectManager">functions</see>.
             </remarks>
-            <returns>
-            	The game object created but not yet registered.
-            </returns>
         </member>
-        <member name="M:FYFY.GameObjectManager.createPrimitive(UnityEngine.PrimitiveType)">
+        <member name="M:FYFY.GameObjectManager.unbind(UnityEngine.GameObject)">
             <summary>
-            	Creates a game object with a primitive mesh renderer and appropriate collider and returns it. The game object will be registered by FYFY at the beginning of the next update block.
-            </summary>
-            <remarks>
-            	Even if the game object is not registered, you can use it in other <see cref="T:FYFY.GameObjectManager">functions</see> in current frame.
-            </remarks>
-            <returns>
-            	The game object created but not yet registered.
-            </returns>
-            <param name="type">
-            	The type of primitive object to create.
-            </param>
-        </member>
-        <member name="M:FYFY.GameObjectManager.instantiatePrefab(System.String)">
-            <summary>
-            	Creates a game object as a copy of the prefab and returns it. The game object will be registered by FYFY at the beginning of the next update block.
-            </summary>
-            <remarks>
-            	Even if the game object is not registered, you can use it in other <see cref="T:FYFY.GameObjectManager">functions</see> in current frame.
-            </remarks>
-            <returns>
-            	The game object created but not yet registered.
-            </returns>
-            <param name="prefabName">
-            	The pathname of the target.
-            </param>
-        </member>
-        <member name="M:FYFY.GameObjectManager.destroyGameObject(UnityEngine.GameObject)">
-            <summary>
-            	Destroies the game object at the beginning of the next update block.
+            	Unbind a game object to FYFY at the beginning of the next update block.
             </summary>
         </member>
         <member name="M:FYFY.GameObjectManager.setGameObjectState(UnityEngine.GameObject,System.Boolean)">
@@ -418,29 +455,58 @@
             <summary></summary>
         </member>
         <member name="T:FYFY.MainLoop">
-            <summary></summary>
+            <summary>
+            MainLoop enables:
+             (1) to set systems into the three contexts (fixedUpdate, update and lateUpdate)
+             (2) to define which game object binding on start
+             (3) to follow system load and families content during playing mode
+            </summary>
         </member>
         <member name="F:FYFY.MainLoop._fixedUpdateSystemDescriptions">
-            <summary></summary>
+            <summary>List of systems defined in fixedUpdate context through the Inspector</summary>
         </member>
         <member name="F:FYFY.MainLoop._updateSystemDescriptions">
-            <summary></summary>
+            <summary>List of systems defined in Update context through the Inspector</summary>
         </member>
         <member name="F:FYFY.MainLoop._lateUpdateSystemDescriptions">
-            <summary></summary>
+            <summary>List of systems defined in lateUpdate context through the Inspector</summary>
         </member>
-        <member name="T:FYFY.MainLoopCreationMenu">
+        <member name="F:FYFY.MainLoop._forceUpdateInspector">
+            <summary>Used in FSystem to force Inspector redraw when pause is update by code</summary>
+        </member>
+        <member name="F:FYFY.MainLoop._loadingState">
             <summary>
-            	Class automatically loaded by Unity Editor to create the FYFY menu.
+            Define how game objects are binded on start
+            0 means bind all game objects on start but exclude game objects defined into _specialGameObjects
+            1 means bind only game objects defined into _specialGameObjects
             </summary>
         </member>
-        <member name="T:FYFY.MainLoopInspector">
-            <summary>
-            	Custom inspector automatically used by Unity Editor when a <see cref="T:FYFY.MainLoop"/> is find in inspector view.
-            </summary>
-        </member>
-        <member name="M:FYFY.MainLoopInspector.OnInspectorGUI">
+        <member name="F:FYFY.MainLoop._specialGameObjects">
             <summary></summary>
+        </member>
+        <member name="F:FYFY.MainLoop.showSystemProfiler">
+            <summary>Show system profiler</summary>
+        </member>
+        <member name="F:FYFY.MainLoop.showFamilyInspector">
+            <summary>Show families used in systems</summary>
+        </member>
+        <member name="F:FYFY.MainLoop.showFamilyInspectorFixedUpdate">
+            <summary>Show families used in fixed update systems</summary>
+        </member>
+        <member name="F:FYFY.MainLoop.showFamilyInspectorUpdate">
+            <summary>Show families used in update systems</summary>
+        </member>
+        <member name="F:FYFY.MainLoop.showFamilyInspectorLateUpdate">
+            <summary>Show families used in late update systems</summary>
+        </member>
+        <member name="F:FYFY.MainLoop.fixedUpdateStats">
+            <summary>How much time (ms) the previous fixed update execution lasted</summary>
+        </member>
+        <member name="F:FYFY.MainLoop.updateStats">
+            <summary>How much time (ms) the previous update execution lasted</summary>
+        </member>
+        <member name="F:FYFY.MainLoop.lateUpdateStats">
+            <summary>How much time (ms) the previous late update execution lasted</summary>
         </member>
         <member name="T:FYFY.AllOfComponents">
             <summary>

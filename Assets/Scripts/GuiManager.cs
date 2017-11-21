@@ -77,11 +77,12 @@ public class GuiManager : MonoBehaviour
 
     public void recommencer()
     {
-        SceneManager.LoadScene(sceneActuelle.name);
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void suivant()
     {
-        SceneManager.LoadScene(sceneSuivante.name);
+		//Debug.Log (sceneSuivante.name);
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
 }
